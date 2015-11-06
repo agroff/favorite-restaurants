@@ -14,23 +14,23 @@ class Controller {
 	/**
 	 * @param $query - The search query used to find restaurants
 	 */
-	public function search($query) {
-		$query = $query . "%";
-		$restaurants = ORM::for_table('restaurants')
-			->where_any_is(array(
-				array('restaurant_name' => $query),
-				array('cuisine_type' => $query),
-				), "LIKE")
+	public function search( $query ) {
+		$query = addcslashes($query, "%_") . "%";
 
-		             ->order_by_asc('restaurant_name')
-		             ->find_many();
+		$restaurants = ORM::for_table( 'restaurants' )
+		                  ->where_any_is( array(
+			                  array( 'restaurant_name' => $query ),
+			                  array( 'cuisine_type' => $query ),
+		                  ), "LIKE" )
+		                  ->order_by_asc( 'restaurant_name' )
+		                  ->find_many();
 
 		$results = array();
-		foreach($restaurants as $restaurant){
+		foreach ( $restaurants as $restaurant ) {
 			$results[] = $restaurant->as_array();
 		}
 
-		echo json_encode($results);
+		echo json_encode( $results );
 	}
 
 } 
