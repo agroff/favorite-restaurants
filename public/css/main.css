@@ -16,3 +16,24 @@ body {
 .mdl-textfield {
     width: 100%;
 }
+.left-aligned{
+    text-align:left;
+}
+.resultsHeader{
+    font-weight: bold;
+
+}
+.resultsHeader,
+ #restaurantResults .row{
+     border-radius: 5px;
+     max-width: 555px;
+     padding: 5px;
+     background-color: #F7F7F7;
+     margin: 2px auto;
+ }
+#restaurantResults .row:hover{
+    background-color: #F1F1F1;
+}
+#loadingContainer, #resultsHeader, #noResults{
+    display:none;
+}
