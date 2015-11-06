@@ -5,10 +5,18 @@
         rowTemplate = "#restaurantRow",
 
         setState = function (state) {
-            var $states = $("#loadingContainer, #resultsHeader, #noResults");
+            var $states = $("#loadingContainer, #resultsHeader, #noResults"),
+                $results = $("#restaurantResults");
+
             $states.hide();
 
-            $("#" + state).show();
+            if(state === false){
+                $results.hide();
+            }
+            else {
+                $results.show();
+                $("#" + state).show();
+            }
         },
 
         renderRestaurants = function (results) {
@@ -31,6 +39,10 @@
         },
 
         getMatchingRestaurants = function (query, callback) {
+            if(query === ""){
+                setState(false);
+                return;
+            }
             $.getJSON("/search/" + query, callback);
         },
 

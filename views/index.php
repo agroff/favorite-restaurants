@@ -34,6 +34,7 @@
 		<div class="col-lg-4 col-lg-offset-2">Restaurant</div>
 		<div class="col-lg-4">Cuisine</div>
 	</div>
+
 	<div id="restaurantResults"></div>
 </div>
 
