@@ -1,14 +1,11 @@
 #!/usr/bin/env php
 <?php
 
-
 $_SERVER["DOCUMENT_ROOT"] = __DIR__;
 
+include("bootstrap/initialize.php");
 
-include("init.php");
-
-
-$command = new Groff\Doge\Command\Main();
+$command = new Groff\Restaurant\Command\Install();
 $status = $command->run();
 
 exit($status);

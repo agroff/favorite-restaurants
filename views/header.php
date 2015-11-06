@@ -9,19 +9,21 @@
 	<meta name="author" content="">
 	<link rel="icon" href="favicon.ico">
 
-	<title>Starter Template for Bootstrap</title>
+	<title>Favorite Restaurants</title>
 
 	<!-- Bootstrap core CSS -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
 
 	<!-- Google Material Design Framework -->
-	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.red-blue.min.css">
+	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.cyan-pink.min.css">
 	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 	<!-- Custom styles for this template -->
-	<link href="css/main.css" rel="stylesheet">
+	<link href="/css/main.css" rel="stylesheet">
 
 
 

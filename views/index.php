@@ -20,5 +20,24 @@
 		</div>
 	</div>
 
+<div class="resultsContainer">
 
+	<div class="text-center" id="loadingContainer">
+		<i class="fa fa-3x fa-circle-o-notch fa-spin"></i>
+	</div>
+
+	<p class="lead text-center" id="noResults">
+		We couldn't find any matching restaurants.
+	</p>
+
+	<div class="row resultsHeader" id="resultsHeader">
+		<div class="col-lg-4 col-lg-offset-2">Restaurant</div>
+		<div class="col-lg-4">Cuisine</div>
+	</div>
+	<div id="restaurantResults"></div>
+</div>
+
+
+
+<?php template( 'restaurantRow' ); ?>
 <?php view( 'footer' ); ?>

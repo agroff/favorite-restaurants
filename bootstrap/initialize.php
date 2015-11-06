@@ -1,5 +1,5 @@
 <?php
-define( "DOC_ROOT", $_SERVER["DOCUMENT_ROOT"] . "/.." );
+define( "DOC_ROOT", str_replace("/public", "", $_SERVER["DOCUMENT_ROOT"]) );
 
 date_default_timezone_set( 'UTC' );
 
@@ -43,5 +43,6 @@ $username     = $config["DB"]["username"];
 $password     = $config["DB"]["password"];
 
 ORM::configure( 'mysql:host=' . $host . ';dbname=' . $databaseName );
+ORM::configure('logging', true);
 ORM::configure( 'username', $username );
 ORM::configure( 'password', $password );
