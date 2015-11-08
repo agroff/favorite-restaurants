@@ -2,3 +2,4 @@ cache/
 .idea/
 vendor/
 bootstrap/settings.php
+bootstrap/settings.test.php
