@@ -9,6 +9,10 @@ echo ""
 echo "Please ensure you have composer installed, as well as MySQL and PHP v5.5 or greater."
 echo "Continue?"
 
+##########################################################
+################## GATHER USER INPUT #####################
+##########################################################
+
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) echo "Proceeding."; break;;
@@ -36,6 +40,10 @@ echo "We will create a database if the user has permission. Otherwise use an exi
 read -e -p "Please enter the mysql database name (leave empty for 'restaurants'): " DATABASE
 
 
+##########################################################
+################# WRITE SETTINGS FILE ####################
+##########################################################
+
 if [ -z "$DATABASE" ];
 then
   DATABASE="restaurants"
@@ -55,10 +63,23 @@ mv $DESTINATION_SETTINGS "$DESTINATION_SETTINGS.tmp"
 sed "s/{{password}}/$PASSWORD/g" < "$DESTINATION_SETTINGS.tmp" > $DESTINATION_SETTINGS
 rm "$DESTINATION_SETTINGS.tmp"
 
+
+##########################################################
+############### RUN INSTALLATION PROCESSES ###############
+##########################################################
+
+#install dependencies
 composer install
 
+#run install script to create and seed DB
 php install
 
+
+##########################################################
+#################### SERVE APPLICATION ###################
+##########################################################
+
+#change directory to public
 cd public
 
 echo "The application is running at http://localhost:8788"
