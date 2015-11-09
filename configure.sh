@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 SOURCE_SETTINGS="bootstrap/settings.sample.php"
-DESTINATION_SETTINGS="bootstrap/settings.test.php"
+DESTINATION_SETTINGS="bootstrap/settings.php"
 
 echo "You are about to configure the favorite restaurants app. This will configure the application's"
 echo "database settings,install dependencies, create a database, seed the database, and serve the"
@@ -25,8 +25,6 @@ read -e -p "Please enter the mysql username: " USERNAME
 read -s -p "Please enter the mysql password: " PASSWORD
 
 echo ""
-
-echo $PASSWORD
 
 read -e -p "Please enter the mysql host (leave empty for 'localhost'): " HOST
 
