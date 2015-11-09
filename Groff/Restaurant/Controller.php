@@ -15,6 +15,7 @@ class Controller {
 	 */
 	public function search( $query ) {
 
+		//sleep(2);
 		$results = Restaurant::search($query);
 
 		echo json_encode( $results );

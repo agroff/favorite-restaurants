@@ -47,14 +47,11 @@
         },
 
         ready = function () {
-            var searchRestaurants = function () {
-                var query = $(this).val();
-                getMatchingRestaurants(query, function (response) {
-                    renderRestaurants(response);
-                });
-            };
 
-            $(findRestaurantsInput).keyup(searchRestaurants);
+            $(findRestaurantsInput).keyup(function () {
+                var query = $(this).val();
+                getMatchingRestaurants(query, renderRestaurants);
+            });
         };
 
     $(ready);
