@@ -7,7 +7,7 @@ It also includes a command-line install script written in PHP to parse the provi
 
 Since there are many files in the application, the most relevant ones are described here:
 
-[Installation Command](https://github.com/agroff/favorite-restaurants/blob/master/Groff/Restaurant/Command/Install.php) - This class extends my [Command] respository which is installed via composer and implements a CLI program which seeds the database 
+[Installation Command](https://github.com/agroff/favorite-restaurants/blob/master/Groff/Restaurant/Command/Install.php) - This class extends my [Command](https://github.com/agroff/Command) respository which is installed via composer and implements a CLI program which seeds the database 
 
 [Main Controller](https://github.com/agroff/favorite-restaurants/blob/master/Groff/Restaurant/Controller.php) - A simple thin controller which serves the index page and the search api.
 
