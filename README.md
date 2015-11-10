@@ -22,16 +22,20 @@ Since there are many files in the application, the most relevant ones are descri
 Be up and running quickly with the following commands:
 
 If you don't have composer you'll need that. Also have a mysql username and password available.
+
     curl -sS https://getcomposer.org/installer | php
     mv composer.phar /usr/local/bin/composer
 
 Checkout the code
+
     git clone https://github.com/agroff/favorite-restaurants.git
 
 cd into the root directory:
+
     cd favorite-restaurants
 
 Run the configuration bash script. This will prompt some input and then configure and serve the application.
+
     ./configure.sh
     
 The script should run fine in OSX or Ubuntu, but if there are problems, simply copy `bootstrap/settings.sample.php` to `bootstrap/settings.php` and add database configuration. Then:
