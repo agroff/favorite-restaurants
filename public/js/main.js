@@ -1,22 +1,21 @@
 (function ($) {
 
-    var findRestaurantsInput = "#findRestaurants",
+    var lastQuery = "",
+
+        findRestaurantsInput = "#findRestaurants",
         restaurantResults = "#restaurantResults",
         rowTemplate = "#restaurantRow",
 
         setState = function (state) {
-            var $states = $("#loadingContainer, #resultsHeader, #noResults"),
-                $results = $("#restaurantResults");
+            var $states = $("#loadingState, #noResults, #restaurantResults");
 
             $states.hide();
 
             if(state === false){
-                $results.hide();
+                return;
             }
-            else {
-                $results.show();
-                $("#" + state).show();
-            }
+
+            $("#" + state).show();
         },
 
         renderRestaurants = function (results) {
@@ -24,7 +23,6 @@
                 $rowTemplate = $(rowTemplate);
 
             $resultContainer.html("");
-            setState("loadingContainer");
 
             $.each(results, function (i, item) {
                 $resultContainer.loadTemplate($rowTemplate, item, {prepend : true});
@@ -34,15 +32,25 @@
                 setState("noResults");
             }
             else {
-                setState("resultsHeader");
+                setState("restaurantResults");
             }
         },
 
         getMatchingRestaurants = function (query, callback) {
+            //don't duplicate queries.
+            if(query === lastQuery){
+                return;
+            }
+
+            lastQuery = query;
+
             if(query === ""){
                 setState(false);
                 return;
             }
+
+            setState("loadingState");
+
             $.getJSON("/search/" + query, callback);
         },
 
@@ -52,6 +60,8 @@
                 var query = $(this).val();
                 getMatchingRestaurants(query, renderRestaurants);
             });
+
+
         };
 
     $(ready);

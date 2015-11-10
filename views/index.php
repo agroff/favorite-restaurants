@@ -8,32 +8,28 @@
 
 	<div class="row">
 
-		<div class="col-lg-6 col-lg-offset-3">
+		<div class="col-lg-1 col-lg-offset-2" id="loadingContainer">
+			<i class="fa fa-lg fa-circle-o-notch fa-spin" id="loadingState"></i>
+		</div>
 
-			<form action="#">
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<input class="mdl-textfield__input main-input" type="text" id="findRestaurants">
+		<div class="col-lg-6">
+
+			<form action="javascript:void(0);">
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="searchContainer">
+					<input class="mdl-textfield__input main-input" type="text" id="findRestaurants" autocomplete="off">
 					<label class="mdl-textfield__label" for="findRestaurants">Find a Restaurant</label>
 				</div>
 			</form>
 
 		</div>
+
 	</div>
 
 <div class="resultsContainer">
 
-	<div class="text-center" id="loadingContainer">
-		<i class="fa fa-3x fa-circle-o-notch fa-spin"></i>
-	</div>
-
 	<p class="lead text-center" id="noResults">
 		We couldn't find any matching restaurants.
 	</p>
-
-	<div class="row resultsHeader" id="resultsHeader">
-		<div class="col-lg-4 col-lg-offset-2">Restaurant</div>
-		<div class="col-lg-4">Cuisine</div>
-	</div>
 
 	<div id="restaurantResults"></div>
 </div>

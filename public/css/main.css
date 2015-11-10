@@ -23,17 +23,28 @@ body {
     font-weight: bold;
 
 }
-.resultsHeader,
+.resultsContainer{
+    min-height:500px;
+}
+
  #restaurantResults .row{
-     border-radius: 5px;
+     border-radius: 2px;
      max-width: 555px;
      padding: 5px;
      background-color: #F7F7F7;
-     margin: 2px auto;
+     margin: 1px auto;
  }
+#searchContainer{
+    margin-bottom:-20px;
+}
 #restaurantResults .row:hover{
     background-color: #F1F1F1;
 }
-#loadingContainer, #resultsHeader, #noResults{
+#loadingState, #resultsHeader, #noResults{
     display:none;
+}
+#loadingContainer{
+    color:#ccc;
+    padding: 27px 10px 0 0;
+    text-align:right;
 }
