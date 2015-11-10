@@ -1,6 +1,8 @@
 # Summary
 This application is a code sample for GoFundMe in accordance with the requirements [here.](https://www.gofundme.com/code-sample)
 
+[Try out the hosted version here.](http://104.236.91.226/)
+
 It uses a custom written barebones MVC framework and PSR-4 autoloading classes to demonstrate in-depth knowledge of MVC and OOP, while also meeting the more basic requirements of implementing an auto-complete text field using AJAX and a RESTful JSON API.
  
 It also includes a command-line install script written in PHP to parse the provided CSV and seed the database.

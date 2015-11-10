@@ -8,11 +8,8 @@
 
 	<div class="row">
 
-		<div class="col-lg-1 col-lg-offset-2" id="loadingContainer">
-			<i class="fa fa-lg fa-circle-o-notch fa-spin" id="loadingState"></i>
-		</div>
 
-		<div class="col-lg-6">
+		<div class="col-lg-6 col-lg-offset-3">
 
 			<form action="javascript:void(0);">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="searchContainer">
@@ -20,6 +17,11 @@
 					<label class="mdl-textfield__label" for="findRestaurants">Find a Restaurant</label>
 				</div>
 			</form>
+
+
+			<div id="loadingContainer">
+				<i class="fa fa-lg fa-circle-o-notch fa-spin" id="loadingState"></i>
+			</div>
 
 		</div>
 
